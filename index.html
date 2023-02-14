@@ -1,0 +1,95 @@
+---
+layout: default
+title: Home
+---
+
+{% if page.url == "/" %}
+<div class="mainheading  homecover " style="background-image:url(assets/images/1.jpg);">
+    <h1 class="sitetitle"><span>UniLecs</span></h1>
+    <p class="lead"><span>Some fancy text for the cover up image</span></p>
+</div>
+<!-- Featured
+================================================== -->
+<section class="featured-posts">
+    <div class="section-title">
+        <h2><span>Featured</span></h2>
+    </div>
+    <div class="row">
+
+        {% for post in site.posts %}
+
+        {% if post.type == 'featured' %}
+
+        {% include featuredbox.html %}
+
+        {% endif %}
+
+        {% endfor %}
+
+    </div>
+</section>
+
+{% endif %}
+
+<!-- Posts Index
+================================================== -->
+<section class="recent-posts">
+
+    <div class="section-title">
+
+        <h2><span>Задачи по программированию</span></h2>
+
+    </div>
+
+    <div class="row listrecent">
+
+        {% for post in site.posts %}
+
+        {% if post.type == 'task' %}
+
+        {% if post.featured %}
+
+        {% include postbox.html %}
+
+        {% endif %}
+
+        {% endif %}
+
+        {% endfor %}
+
+    </div>
+
+    <a href="/tasks">See all</a>
+
+</section>
+<br>
+<section class="recent-posts">
+
+    <div class="section-title">
+
+        <h2><span>Головоломки</span></h2>
+
+    </div>
+
+    <div class="row listrecent">
+
+        {% for post in site.posts %}
+
+        {% if post.type == 'puzzle' %}
+
+        {% if post.featured %}
+
+        {% include postbox.html %}
+
+        {% endif %}
+
+        {% endif %}
+
+        {% endfor %}
+
+    </div>
+
+    <a href="/puzzles">See all</a>
+
+</section>
+

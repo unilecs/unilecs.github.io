@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" href="{{ site.baseurl }}/assets/images/logo.png">
+
+    <title>{{ page.title }} | {{site.name}}</title>
+
+    {% seo %}
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bootstrap.min.css">
+
+    <link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
+
+    <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
+
+    <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+
+</head>
+
+
+{% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
+<body class="{{layout}}">
+<!-- defer loading of font and font awesome -->
+<noscript id="deferred-styles">
+    <link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</noscript>
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+
+    <div class="container">
+
+        <!-- Begin Logo -->
+        <a class="navbar-brand" href="{{ site.baseurl }}/">
+            <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}">
+        </a>
+        <!-- End Logo -->
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+
+            <!-- Begin Menu -->
+
+            <ul class="navbar-nav">
+
+                {% if page.url == "/" %}
+                <li class="nav-item active">
+                    {% else %}
+                <li class="nav-item">
+                    {% endif %}
+                    <a class="nav-link" href="{{ site.baseurl }}/index.html">Blog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
+                </li>
+
+
+            </ul>
+            <div class="ml-auto">
+                {% include search-lunr.html %}
+            </div>
+
+            <!-- End Menu -->
+
+        </div>
+
+    </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+
+<div class="site-content">
+
+    <div class="container">
+
+
+        <!-- Content
+        ================================================== -->
+        <div class="main-content">
+            {{ content }}
+        </div>
+    </div>
+
+    <!-- Begin Footer
+    ================================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                    Copyright © {{ site.time | date: "%Y" }} {{ site.name }}
+                </div>
+                <div class="col-md-6 col-sm-6 text-center text-lg-right">
+                    <a target="_blank" href="https://www.wowthemes.net/mediumish-free-jekyll-template/">UniLecs</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer
+    ================================================== -->
+
+</div>
+<!-- Scripts
+================================================== -->
+
+<script src="{{ site.baseurl }}/assets/js/popper.min.js"></script>
+
+<script src="{{ site.baseurl }}/assets/js/bootstrap.min.js"></script>
+
+<script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
+
+{% if site.lazyimages == "enabled" %}
+<script src="{{ site.baseurl }}/assets/js/lazyload.js"></script>
+{% endif %}
+
+<script src="{{ site.baseurl }}/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+{% if page.layout == 'post' %}
+<script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
+{% endif %}
+
+</body>
+</html>
