@@ -44,4 +44,25 @@ image: assets/images/five-numbers.png
 ```markdown
 {% gist gist-hash-goes-brrrr %}
 ```
-в то место где должен показываться гист. 
+в то место где должен показываться гист.
+
+## Установка jekyll
+
+Предварительно нужно иметь:
+- [Ruby](https://www.ruby-lang.org/en/downloads/)
+- [Ruby Gems](https://rubygems.org/pages/download)
+- GCC и Make
+
+Инструкции для [Mac](https://jekyllrb.com/docs/installation/macos/), [Ubuntu](https://jekyllrb.com/docs/installation/ubuntu/), [Других дистро](https://jekyllrb.com/docs/installation/other-linux/), [Windows](https://jekyllrb.com/docs/installation/windows/). 
+
+После установки для запуска нужно сначала установить все плагины/пакеты:
+> `bundle install`
+
+Дальше `bundle exec jekyll serve` запустит локально. 
+
+Для установки плагина пагинации:
+
+> `gem install jekyll-paginate-v2`
+
+Нужно убедиться что `jekyll-paginate-v2` присутствует и в `Gemfile` и в `_config.yml`
+Примеры добавлени разными способами есть в [Github](https://github.com/sverrirs/jekyll-paginate-v2)
